@@ -4,7 +4,7 @@
 // TeaCharlie-User-Web
 // src/auth.ts
 // 
-// Makabaka1880, 2025. All rights reserved.
+// Team Nil, 2025. All rights reserved.
 
 import axios from 'axios';
 
