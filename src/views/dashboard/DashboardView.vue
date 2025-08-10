@@ -1,26 +1,48 @@
 <template>
 	<div class="bottom-container">
 		<div class="background-image"></div>
-		<div id="content">
-            <div v-if="loading">
-				<h1>Loading user data...</h1>
+		<div id="wrapper">
+			<div id="content">
+				<aside class="sidebar">
+					<ul v-for="page in pages">
+						<li> 
+							<button>
+								{{ $t(`dashboard.label_sidebar_${page}`) }}
+							</button>
+						</li>
+					</ul>
+				</aside>
+				<hr />
+				<main>
+					<div v-if="loading">
+						<h1>
+							{{ $t('dashboard.indicator_loading_user_data') }}
+						</h1>
+					</div>
+					<div v-else-if="error">
+						<h1>
+							{{ $t('dashboard.indicator_err_loading_user_data') }}
+						</h1>
+						<p>{{ error }}</p>
+					</div>
+					<div v-else-if="userData">
+						<h1 class="big-heading">
+							{{ $t('dashboard.message_welcome_back_comma') }}
+							{{ userData.username }}</h1>
+						<button @click="logoutAccount" class="danger">
+							{{ $t('dashboard.action_log_out') }}
+						</button>
+					</div>
+					<div v-else>
+						<h1>{{ $t('dashboard.indicator_not_logged_in') }}</h1>
+					</div>
+				</main>
 			</div>
-			<div v-else-if="error">
-				<h1>Error: Failed to fetch user data</h1>
-				<p>{{ error }}</p>
-			</div>
-			<div v-else-if="userData">
-				<h1>Welcome Back, {{ userData.username }}</h1>
-				<button @click="logoutAccount">logout</button>
-			</div>
-            <div v-else>
-                <h1>Not logged in</h1>
-            </div>
 		</div>
 	</div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 .bottom-container {
 	height: 100vh;
 	width: 100%;
@@ -29,13 +51,37 @@
 	align-items: center;
 	justify-content: center;
 }
+
+#wrapper {
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+	margin-top: min(150px, 30vh);
+}
+
 #content {
-	background-color: rgba(255, 255, 255, 0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 32px;
-	border-radius: 16px;
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+	padding: 32px;
+	width: min-content;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+li {
+	list-style: none;
+}
+
+ul {
+	padding: 0;
+}
+
+hr {
+	width: 1rem;
+	opacity: 10%;
 }
 </style>
 
@@ -52,7 +98,9 @@ export default {
 		const loading = ref(true);
 		const error = ref<string | null>(null);
 		const userData = ref<any | null>(null);
-
+		type Page = 'basic' | 'gaming';
+		const pages: Array<Page> = ['basic', 'gaming'];
+		const state: Page = 'basic';
 		const fetchUserData = async () => {
 			loading.value = true;
 			error.value = null;
@@ -63,7 +111,7 @@ export default {
 				});
 				userData.value = res.data;
 			} catch (e: any) {
-                console.error("Error fetching user data:", e);
+				console.error("Error fetching user data:", e);
 				error.value = e.response?.data?.message || e.message || "An unknown error occurred.";
 			} finally {
 				loading.value = false;
@@ -89,7 +137,8 @@ export default {
 			loading,
 			error,
 			userData,
-			logoutAccount
+			logoutAccount,
+			pages
 		};
 	}
 }

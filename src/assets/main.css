@@ -68,24 +68,36 @@ input.field-input { /* Assuming 'field-input' is a common class for all text inp
     /* box-sizing: border-box; is already in global reset */
 }
 
-/* --- Buttons --- */
 button {
     padding: 1rem;
     font-size: 1rem;
     height: 3rem;
     border: none;
-    background-color: var(--foliage-color); /* Assuming this variable is defined globally */
-    color: #fff;
     cursor: pointer;
-    border-radius: 4px; /* A nice touch for general buttons */
     transition: background-color 0.2s ease-in-out;
 }
 
-button:hover {
+button.primary {
+    background-color: var(--foliage-color); /* Assuming this variable is defined globally */
+    color: #fff;
+}
+
+button.tab:hover {
+    background-color: #aaa;
+}
+
+button.primary:hover {
     background-color: var(--foliage-dark); /* Assuming this variable is defined globally */
 }
 
-/* --- Utility Classes (Optional but helpful) --- */
+button.danger {
+    background-color: var(--danger-light); /* Assuming this variable is defined globally */
+    color: #fff;
+}
+button.danger:hover {
+    background-color: var(--danger-dark); /* Assuming this variable is defined globally */
+}
+
 .flex-column {
     display: flex;
     flex-direction: column;

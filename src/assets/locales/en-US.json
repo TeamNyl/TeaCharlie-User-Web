@@ -1,0 +1,27 @@
+{
+    "login": {
+        "label_login": "Login",
+        "label_username": "Username",
+        "label_password": "Password",
+        "label_no_account_ques": "No account?",
+        "action_login": "Login",
+        "action_sign_up": "Sign up",
+        "action_i_forgot_my_password": "I forgot my password"
+    },
+    "dashboard": {
+        "message_welcome_back_comma": "Welcome back,",
+        "action_log_out": "Logout",
+        "label_sidebar_basic": "Basic",
+        "label_sidebar_gaming": "Gaming",
+        "indicator_loading_user_data": "Loading user data...",
+        "indicator_err_loading_user_data": "Error: Failed to fetch user data",
+        "indicator_not_logged_in": "User not logged in"
+    },
+    "404": {
+        "heading_not_found": "Page not found.",
+        "label_go_to": "Go to",
+        "action_dashboard_link": "dashboard",
+        "action_login_link": "login",
+        "indicator_loading": "Loading..."
+    }
+}

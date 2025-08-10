@@ -3,24 +3,24 @@
 		<div class="background-image" />
 		<div class="login-content">
 			<header>
-				<h1 class="title">Login</h1>
+				<h1 class="title"> {{ $t('login.label_login') }}</h1>
 			</header>
 			<div class="auth-content">
 				<div class="input-fields">
 					<div class="input-group">
-						<label for="username">Username</label>
+						<label for="username">{{ $t('login.label_username') }}</label>
 						<input type="text" autocomplete="username" id="username" name="username" class="field-input" v-model="username" required />
 					</div>
 
 					<div class="input-group">
-						<label for="password">Password</label>
+						<label for="password">{{ $t('login.label_password') }}</label>
 						<input type="password" autocomplete="current-password" id="password" name="password" class="field-input" v-model="pass" required />
 					</div>
 				</div>
-				<button @click="login" id="login">Login</button>
+				<button @click="login" id="login" class="primary">{{ $t('login.action_login') }}</button>
 				<nav class="auth-links">
-					<p>No account? <a href="/signup">Sign up</a></p>
-					<p><a href="/forgot-password">I forgot my password</a></p>
+					<p>{{ $t('login.label_no_account_ques') }} <a href="/signup">{{ $t('login.action_sign_up') }}</a></p>
+					<p><a href="/forgot-password">{{ $t('login.action_i_forgot_my_password') }}</a></p>
 				</nav>
 			</div>
 		</div>

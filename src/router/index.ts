@@ -8,7 +8,8 @@
 
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
-import DashboardView from '@/views/DashboardView.vue'
+import DashboardView from '@/views/dashboard/DashboardView.vue'
+import NotFound from '@/views/NotFound.vue';
 import { isAuthenticated } from '@/auth';
 
 const routes: RouteRecordRaw[] = [
@@ -24,6 +25,11 @@ const routes: RouteRecordRaw[] = [
 		component: LoginView,
 		meta: { requiresAuth: false },
 	},
+    {
+        path: '/:pathMatch(.*)*',
+        component: NotFound, 
+        meta: { requiresAuth: false }
+    }
 ];
 
 const router = createRouter({

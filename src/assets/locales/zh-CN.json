@@ -1,0 +1,27 @@
+{
+    "login": {
+        "label_login": "登陆",
+        "label_username": "用户名",
+        "label_password": "密码",
+        "label_no_account_ques": "未注册账号？",
+        "action_login": "登陆",
+        "action_sign_up": "注册入口",
+        "action_i_forgot_my_password": "重置密码"
+    },
+    "dashboard": {
+        "message_welcome_back_comma": "欢迎回来, ",
+        "action_log_out": "退出账号",
+        "label_sidebar_basic": "基础设置",
+        "label_sidebar_gaming": "游戏设置",
+        "indicator_loading_user_data": "正在加载用户数据...",
+        "indicator_err_loading_user_data": "发生错误",
+        "indicator_not_logged_in": "用户未登录, 请刷新页面"
+    },
+    "404": {
+        "heading_not_found": "页面未找到。",
+        "label_go_to": "前往",
+        "action_dashboard_link": "面板",
+        "action_login_link": "登陆页面",
+        "indicator_loading": "加载中..."
+    }
+}

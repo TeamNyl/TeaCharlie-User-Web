@@ -29,4 +29,7 @@ html, body {
   --aquatic-vibrant: #688f8c;
   --aquatic-light: #9fc7c3;
   --aquatic-lighter: #e1fffd;
+
+  --danger-dark: #af0038;
+  --danger-light: #ff777d;
 }
