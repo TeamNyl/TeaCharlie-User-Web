@@ -1,0 +1,32 @@
+@import"https://fonts.itedev.com/unifont/index.css";
+
+html, body {
+    padding: 0; margin: 0;
+}
+
+* {
+    font-family: 'Unifont';
+}
+
+:root {
+  --TRUE: 1;
+  --FALSE: 0;
+  --foliage-black: #010201;
+  --foliage-dark: #102b18;
+  --foliage-color: #1f6137;
+  --foliage-vibrant: #479a62;
+  --foliage-light: #93cea2;
+  --foliage-lighter: #e6ffec;
+  --earth-black: #020201;
+  --earth-dark: #29231c;
+  --earth-color: #7a4a1b;
+  --earth-vibrant: #bd6f1e;
+  --earth-light: #ebb07a;
+  --earth-lighter: #fff4de;
+  --aquatic-black: #000202;
+  --aquatic-dark: #172826;
+  --aquatic-color: #3b5957;
+  --aquatic-vibrant: #688f8c;
+  --aquatic-light: #9fc7c3;
+  --aquatic-lighter: #e1fffd;
+}
